@@ -1,0 +1,38 @@
+dotnet new sln
+dotnet new webbapi -o API
+dotnet sln -h
+dotnet sln add API
+dotnet sln list
+dotnet ef -h
+dotnet ef migrations add initalcreate -o Data/Migrations
+dotnet ef database update
+
+dotnet new classlib -o Infrastructure
+dotnet new classlib -o Core
+cd API
+dotnet add reference ../Infrastructure 
+
+dotnet ef database drop -p Infrastructure -s API
+
+dotnet ef migrations add InitalCreate -p Infrastructure -s API -o Data/Migrations
+dotnet ef migrations remove -p Infrastructure -s API 
+
+
+**********************************
+npm install -g @angular/cli
+
+ng new client
+
+ng add @ng-bootstrap/ng-bootstrap
+
+npm install font-awsome
+
+ng g c -h
+ng g c nav-bar --skip-tests
+
+ng g m core
+ng g m shop
+ng g c shop --flat --skip-tests 
+ng g s shop --flat --skip-tests 
+
+ng g m shop-routing --flat

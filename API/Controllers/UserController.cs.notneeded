@@ -1,0 +1,17 @@
+// using Microsoft.AspNetCore.Authorization;
+// using Microsoft.AspNetCore.Mvc;
+
+// namespace RoleBasedAuthDemo.Controllers
+// {
+//     [ApiController]
+//     [Route("api/[controller]")]
+//     [Authorize(Roles = "User")] // Restrict to User Role
+//     public class UserController : ControllerBase
+//     {
+//         [HttpGet("profile")]
+//         public IActionResult Profile()
+//         {
+//             return Ok("Welcome to User Profile!");
+//         }
+//     }
+// }

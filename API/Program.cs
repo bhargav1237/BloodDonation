@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -22,6 +23,8 @@ namespace API
                 var context = services.GetRequiredService<StoreContext>();
                 await context.Database.MigrateAsync();
                 await StoreContextSeed.SeedAsync(context, loggerFactory);
+                var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+                await SeedRoles.RolesAsync(roleManager); // Call the SeedRoles method
             }
             catch (Exception ex)
             {

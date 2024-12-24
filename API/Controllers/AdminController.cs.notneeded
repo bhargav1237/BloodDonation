@@ -1,0 +1,17 @@
+// using Microsoft.AspNetCore.Authorization;
+// using Microsoft.AspNetCore.Mvc;
+
+// namespace API.Controllers
+// {
+//     [ApiController]
+//     [Route("api/[controller]")]
+//     [Authorize(Roles = "Admin")] // Restrict to Admin Role
+//     public class AdminController : ControllerBase
+//     {
+//         [HttpGet("dashboard")]
+//         public IActionResult Dashboard()
+//         {
+//             return Ok("Welcome to Admin Dashboard!");
+//         }
+//     }
+// }

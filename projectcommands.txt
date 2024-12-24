@@ -13,9 +13,13 @@ cd API
 dotnet add reference ../Infrastructure 
 
 dotnet ef database drop -p Infrastructure -s API
+dotnet ef migrations add IdentitySetup -p Infrastructure -s API -o Data/Migrations
+dotnet ef database update --context AppDbContext
 
 dotnet ef migrations add InitalCreate -p Infrastructure -s API -o Data/Migrations
 dotnet ef migrations remove -p Infrastructure -s API 
+dotnet ef database update -p Infrastructure -s API --context AppDbContext
+dotnet ef migrations add IdentitySetup -p Infrastructure -s API -o Data/Migrations --context AppDbContext
 
 
 **********************************
